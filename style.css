@@ -1,0 +1,259 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES E RESET BÁSICO
+   ========================================================================== */
+:root {
+    --primaria: #fdfaf5;
+    --texto: #050505fa; /* Cor marrom escura (igual ao título) */
+    --detalhe: #000000; /* Cor de destaque (gold) */
+    --glass: rgba(255, 255, 255, 0.7); /* Vidro mais translúcido */
+    --whatsapp: #25d366; /* Cor oficial do WhatsApp */
+}
+
+/* 1. IMPORTANDO AS FONTES - Crucial para Pinyon Script funcionar */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--texto);
+    background-color: var(--primaria);
+    overflow-x: hidden;
+    line-height: 1.6;
+    /* Faz o rodapé ficar sempre na base da tela */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   FUNDO FIXO COM BLUR
+   ========================================================================== */
+.bg-fixed {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('images/background_atelier.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    filter: blur(2px); /* Desfoque sutil no fundo */
+}
+
+/* ==========================================================================
+   CABEÇALHO (Navbar) E LOGO
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 10px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+/* 2. ONDE MUDAMOS A FONTE DO LOGO PARA PINYON SCRIPT */
+.logo {
+    font-family: 'Pinyon Script', cursive; /* A fonte desejada */
+    font-size: 3rem; /* Aumentado para destacar os traços finos */
+    font-weight: 400;
+    color: var(--detalhe);
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+.nav-links {
+    display: flex; gap: 20px; align-items: center;
+}
+
+.btn-header {
+    background: var(--detalhe); color: white;
+    padding: 10px 20px; border-radius: 50px;
+    text-decoration: none; font-weight: 600;
+}
+
+/* ==========================================================================
+   CONTEÚDO PRINCIPAL (Main)
+   ========================================================================== */
+main {
+    flex: 1; /* Permite que o main ocupe o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    width: 100%;
+    padding-top: 100px; /* Dá espaço para a Navbar fixa */
+}
+
+/* ==========================================================================
+   HERO SECTION - CENTRALIZAÇÃO ROBUSTA DA CAIXA-TEXT
+   ========================================================================== */
+.hero {
+    width: 100%;
+    min-height: 80vh; /* Setamos uma altura mínima para o centering funcionar bem */
+    display: flex; /* Flexbox para centralização */
+    justify-content: center; /* Centraliza horizontalmente o content-box */
+    align-items: center; /* Centraliza verticalmente o content-box */
+    padding: 0 20px;
+}
+
+.content-box {
+    max-width: 800px;
+    text-align: center;
+    background: transparent; /* Caixa de texto transparente conforme pedido */
+    padding: 40px;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    color: var(--detalhe);
+    font-weight: 600;
+}
+
+.content-box h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin: 20px 0;
+    color: var(--texto); /* Mesma cor do título original */
+}
+
+.cta-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* ==========================================================================
+   BOTÕES E HOVER DO 'VER COLEÇÃO'
+   ========================================================================== */
+.btn {
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+.btn-whatsapp { background: var(--whatsapp); color: white; }
+
+/* 3. BOTÃO 'VER COLEÇÃO' NA MESMA COR DO TÍTULO COM HOVER */
+.btn-outline {
+    border: 2px solid var(--texto); /* Borda na cor marrom escura (igual ao título) */
+    color: var(--texto); /* Texto na cor marrom escura (igual ao título) */
+    background: transparent;
+    transition: all 0.3s ease; /* Transição para o efeito hover */
+}
+
+/* Efeito hover para o botão 'ver coleção' */
+.btn-outline:hover {
+    background-color: var(--texto); /* Preenche com a cor do título no hover */
+    color: white; /* Muda o texto para branco */
+    transform: translateY(-2px); /* Leve efeito de levantar */
+}
+
+/* ==========================================================================
+   CARROSSEL - Correção do Posicionamento dos Botões
+   ========================================================================== */
+.carrossel-section {
+    width: 100%;
+    max-width: 700px; /* Mantemos a largura máxima definida */
+    margin: 60px auto; 
+    padding: 0 20px; /* Reduzi o padding lateral para dar mais espaço */
+    position: relative; /* Necessário para o z-index dos botões funcionar bem */
+}
+
+/* O container que segura tudo (track e botões) */
+.carrossel-container {
+    position: relative;
+    width: 100%;
+}
+
+.carrossel-track-container { 
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Mantém a proporção ideal para fotos verticais */
+    overflow: hidden; 
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.carrossel-track { 
+    display: flex; list-style: none; height: 100%; 
+    transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1); 
+}
+
+.carrossel-slide { flex: 0 0 100%; width: 100%; }
+
+.carrossel-slide img { 
+    width: 100%; height: 100%; 
+    object-fit: contain; /* Exibe a peça de crochê inteira sem cortes */
+}
+
+/* ==========================================================================
+   BOTÕES DE NAVEGAÇÃO - Sobre a Imagem
+   ========================================================================== */
+.carrossel-btn {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    background: rgba(255, 255, 255, 0.8); /* Fundo branco translúcido para leitura */
+    backdrop-filter: blur(5px); /* Efeito de vidro suave */
+    border: 1px solid var(--detalhe); 
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%;
+    cursor: pointer; 
+    z-index: 10; /* Garante que fique SOBRE a imagem */
+    display: flex; /* Centraliza o ícone dentro do botão */
+    align-items: center;
+    justify-content: center;
+    color: var(--detalhe);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover para o botão */
+.carrossel-btn:hover {
+    background: white; /* Fundo sólido no hover */
+    color: #333; /* Muda a cor do ícone no hover */
+    transform: translateY(-50%) scale(1.1); /* Efeito de zoom sutil */
+}
+
+/* Posicionamento Final: agora eles estão sobre as bordas da imagem */
+.btn-left { left: 15px; } /* 15px de distância da borda esquerda */
+.btn-right { right: 15px; } /* 15px de distância da borda direita */
+
+/* Ajuste responsivo para telas menores */
+@media (max-width: 768px) {
+    .btn-left { left: 5px; }
+    .btn-right { right: 5px; }
+}
+
+/* ==========================================================================
+   RODAPÉ (Footer)
+   ========================================================================= */
+.footer-site {
+    position: fixed; /* Trava o elemento na tela */
+    bottom: 0; /* Prende exatamente na borda inferior */
+    left: 0; /* Alinha à esquerda para não dar espaço em branco */
+    width: 100%;
+    background: var(--glass);
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(188, 152, 106, 0.2);
+    z-index: 1000; /* Garante que ele fique por cima das imagens ao rolar a tela */
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
