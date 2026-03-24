@@ -256,4 +256,34 @@ main {
     z-index: 1000; /* Garante que ele fique por cima das imagens ao rolar a tela */
 }
 
+/* Ajustes para Celular e Telas Pequenas */
+@media screen and (max-width: 768px) {
+    body {
+        /* Garante que a imagem de fundo não "estique" nem suma */
+        background-attachment: scroll !important;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Aumenta o título principal para não ficar "esmagado" */
+    h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.3;
+        padding: 0 15px;
+    }
+
+    /* Garante que os parágrafos e textos sejam lidos sem lupa */
+    p, span, .descricao {
+        font-size: 1.15rem !important;
+        color: #fdfdfd; /* Garante contraste no fundo escuro */
+    }
+
+    /* Ajusta os botões para ocuparem melhor a tela do celular */
+    .btn-whatsapp, .btn-orcamento {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 1.1rem;
+    }
+}
+
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
