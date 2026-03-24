@@ -5,7 +5,7 @@
 Site institucional desenvolvido para o **Ateliê Célia Recriar**, focado em apresentar peças exclusivas feitas de forma artesanal em crochê de luxo. O projeto prioriza uma experiência visual sofisticada, refletindo a delicadeza e o cuidado de cada peça produzida.
 
 ## 📱 Demonstração
-Você pode visualizar o projeto online aqui: [liltonmagalhaes.github.io](https://liltonmagalhaes.github.io)
+Você pode visualizar o projeto online aqui: [liltonmagalhaes.github.io/site-celia](https://liltonmagalhaes.github.io/site-celia)
 
 ## ✨ Funcionalidades
 - **Design Responsivo:** Adaptado para smartphones (iPhone/Android) e desktops.
