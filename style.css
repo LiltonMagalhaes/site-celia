@@ -3,9 +3,9 @@
    ========================================================================== */
 :root {
   --primaria: #fdfaf5;
-  --texto: #050505fa;
-  --detalhe: #000000;
-  --glass: rgba(255, 255, 255, 0.7);
+  --texto: #3c2a2afa;
+  --detalhe: #3c2a2afa;
+  --glass: rgba(255, 255, 255, 0.5);
   --whatsapp: #25d366;
   --instagram: #e4405f; /* Cor sólida do Instagram para o header */
 }
@@ -43,7 +43,6 @@ body {
   background-size: cover;
   background-position: center;
   z-index: -2;
-  filter: blur(2px);
 }
 
 /* ==========================================================================
@@ -149,6 +148,69 @@ main {
   gap: 15px;
   justify-content: center;
   margin-top: 30px;
+}
+
+/* Glassmorphism */
+/* Este estilo vai direto na caixa que você já criou no HTML */
+.content-box {
+  /* 1. O efeito de Vidro (Glassmorphism) */
+  background: rgba(255, 255, 255, 0.05); /* Branco bem suave */
+  backdrop-filter: blur(5px); /* Desfoca o que está atrás da caixa */
+  -webkit-backdrop-filter: blur(5px); /* Suporte para Safari/iPhone */
+
+  /* 2. Acabamento e Legibilidade */
+  padding: 3rem; /* Espaço interno para o texto respirar */
+  border-radius: 20px; /* Arredonda as bordas */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Linha fina de brilho na borda */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra leve para dar profundidade */
+
+  /* 3. Posicionamento para centralizar */
+  max-width: 700px; /* Largura máxima da caixa de texto */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  text-align: center; /* Centraliza o texto */
+
+  /* Garante que o conteúdo fique acima do fundo fixo */
+  position: relative;
+  z-index: 1; /* Este estilo vai direto na caixa que você já criou no HTML */
+  .content-box {
+    /* 1. O efeito de Vidro (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.15); /* Branco bem suave */
+    backdrop-filter: blur(12px); /* Desfoca o que está atrás da caixa */
+    -webkit-backdrop-filter: blur(12px); /* Suporte para Safari/iPhone */
+
+    /* 2. Acabamento e Legibilidade */
+    padding: 3rem; /* Espaço interno para o texto respirar */
+    border-radius: 20px; /* Arredonda as bordas */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Linha fina de brilho na borda */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra leve para dar profundidade */
+
+    /* 3. Posicionamento para centralizar */
+    max-width: 700px; /* Largura máxima da caixa de texto */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+
+    /* Garante que o conteúdo fique acima do fundo fixo */
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Ajuste para o texto não ficar colado no topo */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Faz a seção ocupar a tela inteira */
+    padding: 20px;
+  }
+}
+
+/* Ajuste para o texto não ficar colado no topo */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Faz a seção ocupar a tela inteira */
+  padding: 20px;
 }
 
 /* ==========================================================================
