@@ -144,6 +144,7 @@ main {
 }
 
 .cta-group {
+  border-radius: 20px;
   display: flex;
   gap: 15px;
   justify-content: center;
@@ -168,6 +169,7 @@ main {
 
 /* Botão do WhatsApp (Corpo da página) */
 .btn-whatsapp {
+  border-radius: 20px;
   background: var(--whatsapp);
   color: white;
   width: auto; /* Ajustado para não ser 20% e quebrar */
@@ -303,9 +305,14 @@ main {
     width: 100%;
   }
 
-  .btn-whatsapp,
   .btn-outline {
     width: 90% !important; /* Ambos ficam largos e centralizados no mobile */
+    margin: 5px 0;
+  }
+
+  .btn-whatsapp {
+    border-radius: 20px;
+    width: 20%; /* Ambos ficam largos e centralizados no mobile */
     margin: 5px 0;
   }
 
