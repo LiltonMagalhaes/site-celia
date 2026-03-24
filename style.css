@@ -259,11 +259,24 @@ main {
 /* Ajustes para Celular e Telas Pequenas */
 @media screen and (max-width: 768px) {
     body {
-        /* Garante que a imagem de fundo não "estique" nem suma */
+        /* Evita bugs de rolagem em dispositivos móveis */
         background-attachment: scroll !important;
+        
+        /* Garante que a imagem cubra tudo sem distorcer */
         background-size: cover;
+        
+        /* Centraliza o foco da imagem */
         background-position: center;
+
+        /* CORREÇÃO PARA ALTURA NO MOBILE: */
+        /* Usa a altura mínima da viewport para evitar espaços em branco */
+        min-height: 100vh; 
+        
+        /* Opcional: Se a imagem for muito pesada, você pode centralizar 
+           em uma parte específica (ex: topo) se o conteúdo for longo */
+        background-position: center top;
     }
+}
 
     /* Aumenta o título principal para não ficar "esmagado" */
     h1 {
